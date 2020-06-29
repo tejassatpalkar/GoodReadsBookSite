@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+{% block title %}Register{% endblock title %}
+{% block content %}
+    <form class="form-signin" action="{{ url_for('register') }}" method="post">
+  <h1 class="h3 mb-3 font-weight-normal">Create a New Account</h1>
+  <label for="inputUserid" class="sr-only">User ID</label>
+  <input type="text" name = "user_ID" id="inputUserid" class="form-control" placeholder="User ID" required="" autofocus="">
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" name = "user_Pass" id="inputPassword" class="form-control" placeholder="Password" required="">
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+</form>
+{% endblock content %}
