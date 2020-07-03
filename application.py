@@ -1,7 +1,6 @@
 import os
 import requests
 
-from Keys import API_KEY
 from flask import Flask, session, render_template, request, redirect, jsonify, url_for
 from flask_session import Session
 from sqlalchemy import create_engine
@@ -163,7 +162,7 @@ def book(book_isbn):
         """ GOODREADS reviews """
 
         # Read API key from env variable
-        key = API_KEY
+        key = os.getenv("GR_API_KEY")
 
         # Query the api with key and ISBN as parameters
         query = requests.get("https://www.goodreads.com/book/review_counts.json",
